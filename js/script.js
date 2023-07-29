@@ -1,26 +1,25 @@
 const veiculos = [
   {
-    id: "v1",
+    id: 0,
     capacidade: 1000,
-    custoPorKm: 32.5,
+    custoPorKm: 60
   },
   {
-    id: "v2",
+    id: 1,
     capacidade: 500,
-    custoPorKm: 75,
+    custoPorKm: 30
   },
   {
-    id: "v3",
+    id: 2,
     capacidade: 750,
-    custoPorKm: 25,
+    custoPorKm: 45
   },
 ];
-const encomendas = [
 
-];
+const encomendas = [];
 
 function cadastrarEncomenda() {
-  let peso = document.getElementById('pesoMax').value;
+  let peso = parseFloat(document.getElementById('pesoMax').value);
   let destino = document.getElementById('destino').value;
 
   encomendas.push({id: encomendas.length ,peso: peso, destino: destino});
@@ -28,6 +27,6 @@ function cadastrarEncomenda() {
   console.log(encomendas)
 }
 
-function otimizarEntregas(veiculos, encomendas){
+function otimizarEntregas(){
   
 }
