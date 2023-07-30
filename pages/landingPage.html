@@ -13,15 +13,15 @@
 <body>
     <div class="page-container" data-bs-spy="scroll" data-bs-target="navBar" tabindex="0">
         <div class="container-bkg">
-            <header>
-              <nav id="navBar" class="navbar fixed-top" data-bs-theme="dark">
-                <div class="container-fluid">
+            <header class="">
+              <nav id="navBar" class="navbar" data-bs-theme="dark">
+                <div class="container">
                   <a href="#" class="navbar-brand "><img src="../assets/logo.svg" alt=""></a>
-                  <div>
-                    <a href="#" class="btn link-header"><img src="../assets/home.svg" alt=""> Home</a>
-                    <a href="#" class="btn link-header">Sobre</a>
-                    <a href="#" class="btn link-header">Contato</a>
-                    <a href="#" class="btn btn-outline-light link-header">Serviços</a>
+                  <div class="d-flex gap-5">
+                    <a href="#" class="text-decoration-none link-header d-flex align-items-center gap-2"><img src="../assets/home.svg" alt=""> Home</a>
+                    <a href="#" class="text-decoration-none link-header">Sobre</a>
+                    <a href="#" class="text-decoration-none btn-outline-light link-header">Serviços</a>
+                    <a href="#" class="text-decoration-none link-header">Contato</a>
                     <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas"
                       data-bs-target="#offcanvas" aria-controls="offcanvas" aria-label="Toggle navigation">
                       <span class="navbar-toggler-icon"></span>
@@ -53,22 +53,35 @@
                   </div>
               </nav>
             </header>
-            <section class="container-home">
+            
+            <section class="container container-home">
                 <div class="container-home-info">
                     <h1>TransFlash</h1>
                     <h2>Serviços de Transporte</h2>
                     <p>Transportamos suas encomendas para qualquer lugar do Brasil com segurança, pontualidade e preço justo.
                     </p>
-                    <a href="#" class="btn servico">Serviços</a>
-                    <a href="#" class="btn saiba-mais">Saiba mais</a>
-
+                    <div class="d-flex flex-wrap gap-3 ">
+                      <a href="#" class="btn servico">Serviços</a>
+                      <a href="#" class="btn saiba-mais">Saiba mais</a>
+                    </div>
                 </div>
                 <div class="container-home-maps">
                     <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3455.404760619397!2d-51.20334128488615!3d-29.996532081899804!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x951979e0c5d78685%3A0x48abb378377374b3!2sInstituto%20Caldeira!5e0!3m2!1spt-BR!2sbr!4v1690615344042!5m2!1spt-BR!2sbr" width="544" height="408" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                 </div>
             </section>
         </div>
+
         <main>
+
+          <section id="sobre" class="sobre">
+            <div class="container container-sobre d-flex flex-column align-items-center gap-3">
+              <h2 class="display-6 fw-semibold">Conheça a TransFlash</h2>
+
+              <p class="text-center">A TransFlash está no mercado há mais de 40 anos, fazemos cerca de 10 mil viagens por ano. Contamos com frota nova e profissionais capacitados.</p>
+              
+              <iframe width="560" height="315" src="https://www.youtube.com/embed/lVpQvuVdj5s" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            </div>
+          </section>
             
         </main>
     </div>

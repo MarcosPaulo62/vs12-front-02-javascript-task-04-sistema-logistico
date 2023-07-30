@@ -3,13 +3,24 @@
     color: var(--font-color);
 }
 
-.link-header {
-    color: var(--font-color);
-    margin: 0 0.2rem;
-    font-size: 1.25rem;
+h1 {
+    font-size: 3rem;
     font-weight: 600;
 }
 
+h2 {
+    font-size: 2rem;
+}
+
+p {
+    font-size: 1.25rem;
+}
+
+.link-header {
+    color: var(--font-color);
+    font-size: 1.25rem;
+    font-weight: 600;
+}
 
 .navbar-toggler {
     display: none;
@@ -21,17 +32,12 @@
     height: 100vh;
     background-size: cover;
     background-position: bottom;
-    position: fixed;
-    right: 0;
-    left: 0;
 }
 
 .container-home {
-    margin: 1.25rem;
     display: flex;
-    gap: .3125rem;
-    height: 100vh;
-    justify-content: space-evenly;
+    height: 80vh;
+    justify-content: space-around;
     align-items: center;
 }
 
@@ -43,11 +49,16 @@
     background: linear-gradient(rgba(0, 0, 0, .50), rgba(0, 0, 0, .35)100%)
 }
 
-.btn{
+.container-home-info p{
+    font-weight: 400;
+}
+
+.servico, .saiba-mais{
+    margin-top: 4.5rem;
     width: 12.1875rem;
-    margin-left: 1.5rem;
     color: var(--font-color);
 }
+
 .servico{
     background-color: var(--primary-color);
 }
@@ -64,19 +75,18 @@
     background-color: #73b192;
 }
 
-h1 {
-    font-size: 3rem;
-    font-weight: 600;
+.sobre{
+    background: rgba(0, 0, 0, 0.40);
 }
 
-h2 {
-    font-size: 2rem;
+.container-sobre{
+    padding-bottom: 8rem;
+    padding-top: 8rem;
 }
 
-p {
-    font-size: 1.25rem;
+.container-sobre p{
+    padding: 0 10%;
 }
-
 
 
 
