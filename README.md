@@ -1,30 +1,29 @@
-# Sistema Logistico em Js - CodingDojo
+<h1 align="center"> Sistema Logístico </h1>
 
-## Sistema de Logística → criar uma interface para execução deste programa. 
-  - Use o Bootstrap (sugestão) para fazer a estilização e observe com cuidado a navegação.
+<p align="center">
+  Aplicação Web que gerencia o Sistema Logístico de uma empresa de entrega de encomendas<br/>
+</p>
 
-### Uma empresa de logística deseja otimizar as rotas de entrega de suas encomendas para minimizar o tempo de entrega e os custos operacionais. A empresa possui uma frota de veículos de diferentes capacidades e um conjunto de encomendas a serem entregues em diferentes destinos.
-  - Cada veículo possui uma capacidade máxima de carga, medida em peso, e um custo operacional por quilômetro percorrido. Cada encomenda possui um peso e uma localização de destino.
-  - O objetivo é encontrar a combinação ideal de veículos e suas respectivas rotas para entregar todas as encomendas de forma eficiente, levando em consideração a capacidade máxima de carga dos veículos e a distância total percorrida.
-- O algoritmo proposto deve seguir as seguintes etapas:
-  - Etapa 1: Preparação dos Dados
-    - O algoritmo deve receber como entrada um array de objetos, onde cada objeto representa uma encomenda com as seguintes propriedades:
-    - id: O identificador único da encomenda.
-    - peso: O peso da encomenda em quilogramas.
-    - destino: O local de destino da encomenda (por simplicidade, pode ser representado como um objeto com as propriedades latitude e longitude).
-    - Além disso, o algoritmo deve receber um array de objetos, onde cada objeto representa um veículo com as seguintes propriedades:
-      - id: O identificador único do veículo.
-      - capacidade: A capacidade máxima de carga do veículo em quilogramas.
-      - custoPorKm: O custo operacional do veículo por quilômetro percorrido.
-  - Etapa 2: Implementação do Algoritmo
-    - O algoritmo deve encontrar a combinação ideal de veículos e suas rotas de entrega que minimizem o tempo total de entrega e os custos operacionais. Para isso, você deve implementar um algoritmo que utiliza técnicas de otimização combinatória, como a busca exaustiva ou algoritmos genéticos.
-    - O algoritmo deve ser capaz de dividir as encomendas entre os veículos de forma a otimizar o uso da capacidade máxima de carga de cada veículo, evitando a sobrecarga e a necessidade de viagens desnecessárias. Além disso, deve calcular as rotas de entrega para cada veículo, considerando a distância entre os destinos das encomendas e o custo operacional de cada veículo.
-  - Etapa 3: Saída do Algoritmo
-    - O algoritmo deve retornar um objeto com as seguintes informações:
-      - rotas: Um array de objetos, onde cada objeto representa a rota de entrega de um veículo. Cada objeto deve conter:
-      - veiculo: O identificador único do veículo.
-      - encomendas: Um array contendo os identificadores únicos das encomendas entregues na rota.
-      - distanciaTotal: A distância total percorrida na rota em quilômetros.
-      - custoTotal: O custo operacional total da rota.
-      - encomendasNaoEntregues: Um array contendo os identificadores únicos das encomendas que não puderam ser entregues devido à capacidade máxima de carga dos veículos.
+<p align="center">
+  <a href="#-tecnologias">Tecnologias</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#-sobre-o-projeto">Sobre o Projeto</a>&nbsp;&nbsp;&nbsp;
+</p>
 
+<p align="center">
+  <img alt="imagem do site pronto no vercel" src="./assets/TransFlex.png">
+</p>
+
+## 🚀 Tecnologias
+
+Esse projeto foi desenvolvido com as seguintes tecnologias:
+
+- HTML
+- CSS
+- Javascript
+- Bootstrap 5
+
+## 💻 Sobre o Projeto
+
+O projeto é uma aplicação web destinada ao gerenciamento do Sistema Logístico de uma empresa de entrega de encomendas, ao entrar você pode ver a Landing Page da empresa e um botão de Cadastrar Encomenda que leva você até a página de cadastro de encomendas, nessa página você pode cadastrar todas as suas encomendas e ao final clicar no botão de Otimizar, assim o sistema vai alocar as suas encomendas em nossos veículos e lhe apresentar todas as informações pertinentes a entrega.
+
+- <a href="https://www.figma.com/file/7W64NlVFqwFvUbbbPWppYF/TransFlash?type=design&node-id=6%3A54&mode=design&t=ds2lcnOts3jSqiku-1">Link do Figma</a>

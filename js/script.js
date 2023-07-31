@@ -142,6 +142,7 @@ function otimizarEntregas() {
     ID encomendas alocadas: ${carro.idEncomendas}
     Distância total: ${carro.distanciaTotal} KM
     Custo total: ${carro.custoTotal.toLocaleString('pt-br', { style: 'currency', currency: 'BRL' })} \n\n`;
+    custoVeiculosProntos.push(carro.custoTotal);
   }
 
   for (carro of veiculosNaoProntos) {
