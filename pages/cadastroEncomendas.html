@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous" />
+    <link rel="stylesheet" href="../styles/global.css">
+    <link rel="stylesheet" href="../styles/cadastroEncomendas.css">
+  <title>TransFlash - Cadastro</title>
+  <link rel="shortcut icon" href="../assets/logo.svg" type="image/x-icon">
+</head>
+
+<body>
+
+  <div class="page-container" data-bs-spy="scroll" data-bs-target="navBar" tabindex="0">
+    <div class="container-bkg">
+      <header class="">
+        <nav id="navBar" class="navbar" data-bs-theme="dark">
+          <div class="container">
+            <a href="../index.html" class="navbar-brand "><img src="../assets/logo.svg" alt=""></a>
+            <div class="d-flex navegacao">
+              <a href="../index.html" class="text-decoration-none link-header"><img src="../assets/home.svg" alt=""> Home</a>
+              <a href="../index.html#sobre" class="text-decoration-none link-header">Sobre</a>
+              <a href="../index.html#servico" class="text-decoration-none btn-outline-light link-header">Serviços</a>
+              <a href="../index.html#contato" class="text-decoration-none link-header">Contato</a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas"
+                data-bs-target="#offcanvas" aria-controls="offcanvas" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+            </div>
+          </div>
+          <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvas"
+            aria-labelledby="offcanvasLabel">
+            <div class="offcanvas-header">
+              <h5 class="offcanvas-title" id="offcanvasLabel">Menu TransFlash</h5>
+              <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas"
+                aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body">
+              <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                <li class="nav-item">
+                  <a href="../index.html" class="nav-link active" aria-current="page">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="../index.html#sobre" class="nav-link active" aria-current="page">Sobre</a>
+                </li>
+                <li class="nav-item">
+                    <a href="../index.html#servico" class="nav-link active" aria-current="page">Serviços</a>
+                </li>
+                <li class="nav-item">
+                    <a href="../index.html#contato" class="nav-link active" aria-current="page">Contato</a>
+                </li>
+              </ul>
+            </div>
+        </nav>
+      </header>
+
+      <main class="d-flex justify-content-center">
+        <div class="container-cadastro d-flex justify-content-center align-items-center">
+          <!-- <div class="cadastro-img d-flex justify-content-end">
+            <img src="../assets/image-8.png" alt="">
+          </div> -->
+          <div class="cadastro">
+              <h1>Cadastro de encomendas</h1>
+              <form class="d-flex justify-content-center gap-3">
+                <div >
+                  <label for="nome">Nome destinatario:</label>
+                  <input type="text" placeholder="nome">
+                  <label for="destino">Destino:</label>
+                  <select id="destino">
+                    <option value="" disabled selected>Selecione</option>
+                    <option value="1">Porto Alegre</option>
+                    <option value="2">São Paulo</option>
+                    <option value="3">Recife</option>
+                    <option value="4">Rio de Janeiro</option>
+                    <option value="5">Salvador</option>
+                  </select>
+                </div>
+                <div>
+                  <label for="prazo">Prazo para entrega:</label>
+                  <input type="date" name="prazo" id="prazo" required>
+                  <label for="pesoMax">Peso Máximo:</label>
+                  <select name="pesoMax" id="pesoMax" required>
+                    <option value="" disabled selected>Selecione</option>
+                    <option value="40">40kg</option>
+                    <option value="60">60kg</option>
+                    <option value="80">80kg</option>
+                  </select>
+                </div>
+              </form>
+              <div class="info">
+                <h2>Informações:</h2>
+                <p id="resultado" class="card-text">Cadastre todas as encomendas antes de otimizar. As informções irão aparecer aqui após as otimizações!</p>
+              </div>
+              <div class="botao d-flex gap-3">
+                <button type="button" onclick="cadastrarEncomenda()" class="btn btn-primary">Cadastrar</button>
+                <button type="button" onclick="otimizarEntregas()" class="btn btn-danger">Otimizar</button>
+                <div id="alerta" class="alerta alert alert-primary" role="alert">
+                  Cadastro realizado com sucesso!
+                </div>
+              </div>
+            </div>
+          </div>
+          </div>
+        </div>
+      </main>
+    </div>
+  </div>
+  <footer class="d-flex align-items-center justify-content-center">
+    <p class="m-0">© 2023 por <strong>TransFlash</strong>. Todos os direitos reservados.</p>
+  </footer>
+
+  <script src="../js/script.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+    crossorigin="anonymous"></script>
+</body>
+
+</html>

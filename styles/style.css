@@ -1,0 +1,272 @@
+.container-home-info>p,.container-servico-info p {
+    font-size: 1.25rem;
+    margin-bottom: 4rem;
+}
+
+.container-home {
+    height: 80vh;
+    justify-content: space-around;
+}
+
+.container-home-info {
+    width: 34rem;
+    height: 25.875rem;
+    border-radius: 1.25rem;
+    padding: 2rem;
+    background: linear-gradient(rgba(0, 0, 0, .50), rgba(0, 0, 0, .35)100%)
+}
+
+.container-home-info p{
+    font-weight: 400;
+}
+
+.btn-servico, .btn-saiba-mais{
+    width: 40%;
+    color: var(--font-color);
+}
+
+.btn-servico{
+    background-color: var(--primary-color);
+}
+
+.btn-servico:hover, .container-contato-form button:hover{
+    background-color:#0a0064;
+}
+
+.btn-saiba-mais{
+    background-color: var(--secondary-color);
+}
+
+.btn-saiba-mais:hover{
+    background-color: #73b192;
+}
+
+.sobre,.contato{
+    background: rgba(0, 0, 0, 0.40);
+}
+
+.container-sobre{
+    padding-bottom: 8rem;
+    padding-top: 8rem;
+}
+
+.container-sobre p{
+    padding: 0 10%;
+}
+
+.container-home-maps{
+    width: 34rem;
+    height: 25.875rem;
+}
+
+.container-home-maps>iframe{
+    width: 100%;
+}
+
+.servico,.container-servico{
+    background-color: #ECECEC;
+    height: 69.6875rem;
+    
+    justify-content: space-between;
+}
+
+.container-servico-info h2,.container-servico-info h3,.container-servico-info p{
+    color: black;
+
+}
+
+.card-servico{
+    width: 613px;
+    height: 152px;
+    padding: .625rem;
+    border-radius: .625rem;
+    background: var(--primary-color, #07004A);
+}
+
+.container-servico-infos{
+    width: 50%;
+}
+
+.card-servico,.container-servico-img>img{
+    width: 100%;
+}
+
+.btn-card{
+    color: var(--font-color);
+    width: 1.5rem;
+    height: 1.5rem;
+    padding: 0.0000005rem;
+    background-color: rgba(0, 0, 0, 0.50);
+}
+
+.container-servico-img2>img{
+    display: none;
+}
+
+
+.card-servico  div p{
+    margin-bottom: 0.5rem;
+}
+
+.contato{
+    padding-top: 2.5rem;
+    padding-bottom: 2.5rem;
+}
+
+.container-contato-form{
+    width: 50%;
+}
+
+.container-contato-form h2{
+    margin-bottom: 2.5rem;
+}
+
+.container-contato-form input, .container-contato-form textarea{
+    background-color: #EAE6E6;
+    height: 4rem;
+    padding: 1.25rem 1rem;
+}
+
+.container-contato-form textarea{
+    height: 8rem;
+}
+
+.container-contato-form button{
+    color: var(--font-color);
+    width: 50%;
+    height: 4rem;
+    background-color: var(--primary-color);
+}
+
+.container-contato-card{
+    width: 40%;
+    padding-left: 3rem;
+}
+
+.card-contato{
+    width: 80%;
+    padding: 1.69rem 2rem;
+    background: #D9D9D9;
+    cursor: pointer;
+}
+
+@media (max-width: 1200px){
+    .container-servico{
+        gap: 1rem;
+    }
+    .container-contato-card{
+        padding-left: 0;
+    }
+
+    .container-contato-form{
+        width: 40%;
+    }
+
+    .container-contato-form button{
+        width: 70%;
+    }
+
+    .container-contato-card{
+        width: 40%;
+    }
+}
+
+@media (max-width: 992px){
+    .container-home-info p{
+        font-size: 1.1rem;
+    }
+
+    .container-servico-img>img{
+        display: none;
+    }
+
+    .container-servico-img2,.container-servico-infos{
+        width: 100%;
+    }
+    
+    .container-servico-img2>img{
+        width: 100%;
+        display: block;
+        margin-bottom: 2rem;
+    }
+    
+    .container-home-info>p{
+        margin-bottom: 2rem;
+    }
+
+    .contato{
+        flex-direction: column;
+    }
+
+    .container-contato-form{
+        width: 80%;
+    }
+
+    .container-contato-form button{
+        width: 50%;
+    }
+
+    .container-contato-card{
+        width: 80%;
+    }
+}
+
+@media(max-width: 780px){
+    .container-home-info p{
+        font-size: 1.3rem;
+    }
+
+    .container-home-info {
+        height: 26.875rem;
+    }
+
+    .navegacao{
+        gap: 1.5rem;
+    }
+
+    .container-home-maps{
+        display: none;
+    }
+
+    .container-contato-form{
+        width: 90%;
+    }
+
+    .container-contato-card{
+        width: 90%;
+    }
+    .container-home-info>p{
+        margin-bottom: 4rem;
+    }
+}
+
+@media(max-width: 585px) {
+    .container-home-info p{
+        font-size: 1.1rem;
+    }
+
+    .container-sobre>iframe{
+        width: 90%;
+    }
+
+    .container-contato-form{
+        width: 100%;
+    }
+
+    .container-contato-form button{
+        width: 90%;
+    }
+
+    .container-contato-form form{
+        margin: 0 1.63rem;
+    }
+
+    .container-contato-card{
+        width: 100%;
+        padding: 0 0.5rem;
+    }
+
+    .card-contato{
+        width: 90%;
+    }
+}
