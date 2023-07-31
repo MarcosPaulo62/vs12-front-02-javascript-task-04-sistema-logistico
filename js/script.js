@@ -68,7 +68,6 @@ let cont = 0;
 
 function otimizarEntregas() {
   if (cont > 0){
-    alert("Só é possível fazer a simulação uma vez");
     window.location.reload();
   }
 
