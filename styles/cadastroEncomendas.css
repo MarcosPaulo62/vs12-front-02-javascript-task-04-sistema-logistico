@@ -1,45 +1,48 @@
-.container-cadastro{
+.container-cadastro {
     width: 52.1875rem;
+    height: 75vh;
 }
 
-.cadastro{
+.cadastro {
     padding: 1.5rem 3.375rem 0 3.375rem;
     border-radius: 0 3.125rem 3.125rem 0;
     background: rgba(142, 142, 142, 0.84);
-    /* height: 80vh; */
+    width: 100%;
 }
-h1{
+
+h1 {
     font-size: 2rem;
 }
 
-label{
+label {
     display: block;
 }
 
-input, select{
+input,
+select {
     width: 100%;
-    border-radius: 20px;
+    border-radius: 1.25rem;
     background: #C7C7C7;
     border: none;
     color: #737373;
     padding: .5rem 1.4375rem;
 }
 
-form{
+form {
     margin-bottom: 1.875rem;
 }
 
-form div{
+form div {
     width: 100%;
 }
 
-.info h2{
+.info h2 {
     font-size: 1.125rem;
 }
 
 
-.info p{
-    height: 10rem;
+.info p {
+    height: 5rem;
     background-color: #C7C7C7;
     color: #737373;
     font-size: 1rem;
@@ -47,54 +50,56 @@ form div{
     padding: .5rem;
 }
 
-.botao{
+.botao {
     margin: 1.25rem;
 }
-.btn{
+
+.btn {
     width: 45%;
 }
 
-@media (max-width: 1200px){
-    .info p{
+footer {
+    position: fixed;
+
+    bottom: 0;
+    width: 100%;
+}
+
+@media (max-width: 1200px) {
+    .info p {
         height: 8rem;
     }
 
-    .container-cadastro{
+    .container-cadastro {
         width: 40.1875rem;
     }
 }
 
-@media(max-width: 780px){
-    .info p{
+@media(max-width: 780px) {
+    .info p {
         height: 6rem;
     }
 
-    .container-cadastro{
+    .container-cadastro {
         width: 30.1875rem;
     }
 }
 
 @media(max-width: 585px) {
-    h1{
+    h1 {
         font-size: 1.7rem;
     }
-    
-    .info p{
+
+    .info p {
         height: 5rem;
     }
 
-    .container-cadastro{
+    .container-cadastro {
         width: 20.1875rem;
     }
 }
 
-
-
-
-
-
-
-.alerta{
+.alerta {
     display: none;
     position: fixed;
     top: 10%;
@@ -102,14 +107,25 @@ form div{
     transform: translate(-50%, -50%);
 }
 
-.show{
+.show {
     display: block;
     animation: fadeInOut 3s ease-out;
 }
 
 @keyframes fadeInOut {
-    0% { opacity: 0; }
-    10% { opacity: 1; }
-    90% { opacity: 1; }
-    100% { opacity: 0; }
+    0% {
+        opacity: 0;
+    }
+
+    10% {
+        opacity: 1;
+    }
+
+    90% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
 }

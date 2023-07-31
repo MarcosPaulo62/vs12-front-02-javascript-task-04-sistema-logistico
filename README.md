@@ -21,6 +21,7 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
 - CSS
 - Javascript
 - Bootstrap 5
+- Figma
 
 ## 💻 Sobre o Projeto
 

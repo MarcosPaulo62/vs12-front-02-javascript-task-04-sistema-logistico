@@ -4,21 +4,21 @@ const veiculos = [
     capacidade: 500,
     custoPorKm: 5,
     encomendas: [],
-    prontoParaSair: false
+    prontoParaSair: false,
   },
   {
     id: 2,
     capacidade: 700,
     custoPorKm: 7,
     encomendas: [],
-    prontoParaSair: false
+    prontoParaSair: false,
   },
   {
     id: 1,
     capacidade: 1000,
     custoPorKm: 10,
     encomendas: [],
-    prontoParaSair: false
+    prontoParaSair: false,
   },
 ];
 
@@ -27,52 +27,56 @@ const encomendas = [];
 const rotas = [];
 
 function cadastrarEncomenda() {
-  let peso = parseFloat(document.getElementById('pesoMax').value);
-  let destino = document.getElementById('destino').value;
+  if (cont > 0) {
+    window.location.reload();
+  }
 
-  if((!isNaN(peso)) && destino != ''){
+  let peso = parseFloat(document.getElementById("pesoMax").value);
+  let destino = document.getElementById("destino").value;
+
+  if (!isNaN(peso) && destino != "") {
     let entrega = {};
 
     switch (destino) {
-      case '1':
-        entrega = { cidade: 'Porto Alegre', distancia: 10 };
+      case "1":
+        entrega = { cidade: "Porto Alegre", distancia: 10 };
         break;
-      case '2':
-        entrega = { cidade: 'São Paulo', distancia: 30 };
+      case "2":
+        entrega = { cidade: "São Paulo", distancia: 30 };
         break;
-      case '3':
-        entrega = { cidade: 'Recife', distancia: 50 };
+      case "3":
+        entrega = { cidade: "Recife", distancia: 50 };
         break;
-      case '4':
-        entrega = { cidade: 'Rio de Janeiro', distancia: 35 };
+      case "4":
+        entrega = { cidade: "Rio de Janeiro", distancia: 35 };
         break;
-      case '5':
-        entrega = { cidade: 'Salvador', distancia: 100 };
+      case "5":
+        entrega = { cidade: "Salvador", distancia: 100 };
         break;
     }
 
     encomendas.push({ id: encomendas.length, peso: peso, destino: entrega });
 
-    mostrarAlerta('Cadastro realizado com sucesso!');
-  } else{
-    mostrarAlerta('Selecione um peso e um destino válidos!');
-  }  
+    mostrarAlerta("Cadastro realizado com sucesso!");
+  } else {
+    mostrarAlerta("Selecione um peso e um destino válidos!");
+  }
 }
 
 function mostrarAlerta(texto) {
-    const alerta = document.getElementById('alerta');
-    alerta.classList.add('show');
-    alerta.innerText = texto;
-  
-    setTimeout(() => {
-      alerta.classList.remove('show');
-    }, 2000);
-  }
+  const alerta = document.getElementById("alerta");
+  alerta.classList.add("show");
+  alerta.innerText = texto;
+
+  setTimeout(() => {
+    alerta.classList.remove("show");
+  }, 2000);
+}
 
 let cont = 0;
 
 function otimizarEntregas() {
-  if (cont > 0){
+  if (cont > 0) {
     window.location.reload();
   }
 
@@ -82,17 +86,16 @@ function otimizarEntregas() {
     return cidade1.destino.distancia - cidade2.destino.distancia;
   }
 
-  encomendas.sort(compararDistancia); // encomendas ordenadas por cidade mais distante
+  encomendas.sort(compararDistancia);
 
   function compararCarros(carro1, carro2) {
     return carro2.custoPorKm - carro1.custoPorKm;
   }
 
-  veiculos.sort(compararCarros); // veiculos ordenados por menor custo
-
+  veiculos.sort(compararCarros);
 
   for (const carro of veiculos) {
-    let i = 0; // Índice para acompanhar a posição da encomenda no array
+    let i = 0;
 
     while (i < encomendas.length) {
       const item = encomendas[i];
@@ -100,7 +103,7 @@ function otimizarEntregas() {
       if (carro.capacidade >= item.peso) {
         carro.capacidade -= item.peso;
         carro.encomendas.push(item);
-        encomendas.splice(i, 1); // Removendo a encomenda do array
+        encomendas.splice(i, 1);
       } else {
         i++;
       }
@@ -127,10 +130,15 @@ function otimizarEntregas() {
 
     let custoTotal = distanciaTotal * carro.custoPorKm;
 
-    rotas.push({ idCarro: idCarro, idEncomendas: idEncomendas, distanciaTotal: distanciaTotal, custoTotal: custoTotal });
+    rotas.push({
+      idCarro: idCarro,
+      idEncomendas: idEncomendas,
+      distanciaTotal: distanciaTotal,
+      custoTotal: custoTotal,
+    });
   }
 
-  let saida = '';
+  let saida = "";
   let custoVeiculosProntos = [];
 
   const veiculosProntos = rotas.filter((rota, indice) => {
@@ -145,7 +153,10 @@ function otimizarEntregas() {
     saida += `ID do veículo: ${carro.idCarro}
     ID encomendas alocadas: ${carro.idEncomendas}
     Distância total: ${carro.distanciaTotal} KM
-    Custo total: ${carro.custoTotal.toLocaleString('pt-br', { style: 'currency', currency: 'BRL' })} \n\n`;
+    Custo total: ${carro.custoTotal.toLocaleString("pt-br", {
+      style: "currency",
+      currency: "BRL",
+    })} \n\n`;
     custoVeiculosProntos.push(carro.custoTotal);
   }
 
@@ -156,16 +167,22 @@ function otimizarEntregas() {
       Encomendas alocadas: ${carro.idEncomendas}\n\n`;
     } else {
       saida += `ID do veículo: ${carro.idCarro}
-      Veículo não atingiu carga mínima\n\n`;
+      Veículo não atingiu carga mínima para sair\n\n`;
     }
   }
 
-  const custoTotalFrota = custoVeiculosProntos.reduce((acum, custo) => acum + custo, 0);
+  const custoTotalFrota = custoVeiculosProntos.reduce(
+    (acum, custo) => acum + custo,
+    0
+  );
 
-  saida += `Custo total da frota: ${custoTotalFrota.toLocaleString('pt-br', { style: 'currency', currency: 'BRL' })}\n\n`;
+  saida += `Custo total da frota: ${custoTotalFrota.toLocaleString("pt-br", {
+    style: "currency",
+    currency: "BRL",
+  })}\n\n`;
 
-  function incluirSaida(item){
-    saida += item.id + ',';
+  function incluirSaida(item) {
+    saida += item.id + ",";
   }
 
   if (encomendas.length > 0) {
@@ -173,5 +190,5 @@ function otimizarEntregas() {
     encomendas.forEach(incluirSaida);
   }
 
-  document.getElementById('resultado').innerText = saida;
+  document.getElementById("resultado").innerText = saida;
 }
