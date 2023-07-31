@@ -218,6 +218,10 @@ footer>p{
 }
 
 @media (max-width: 992px){
+    .container-home-info p{
+        font-size: 1.1rem;
+    }
+
     .container-servico-img>img{
         display: none;
     }
@@ -254,6 +258,14 @@ footer>p{
 }
 
 @media(max-width: 780px){
+    .container-home-info p{
+        font-size: 1.3rem;
+    }
+
+    .container-home-info {
+        height: 26.875rem;
+    }
+
     .navegacao{
         gap: 1.5rem;
     }
@@ -275,6 +287,10 @@ footer>p{
 }
 
 @media(max-width: 585px) {
+    .container-home-info p{
+        font-size: 1.1rem;
+    }
+
     header .link-header {
         display: none;
     }

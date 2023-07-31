@@ -1,65 +1,178 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous" />
-    <link rel="stylesheet" href="styles/index.css">
-  <title>Task 04 - Sistema Logístico</title>
+    <title>TransFlash</title>
+    <link rel="stylesheet" href="styles/global.css">
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="shortcut icon" href="assets/logo.svg" type="image/x-icon">
 </head>
-
 <body>
-  <header>
-    <nav class="navbar bg-body-tertiary">
-      <div class="container-fluid">
-        <span class="navbar-brand mb-0 h1">Task 04 - Sistema Logístico</span>
-      </div>
-    </nav>
-  </header>
-
-  <main class="p-3">
-
-        <div class="card" style="width: 18rem;">
-          <div class="card-header">
-            <h2>Encomenda</h2>
-          </div>
-          <div class="card-body d-flex flex-column gap-1">
-            <h5 class="card-title">Vamos cadastrar sua encomenda</h5>
-            <label for="pesoMax">Peso Máximo:</label>
-            <select name="pesoMax" id="pesoMax">
-              <option value="40">40kg</option>
-              <option value="60">60kg</option>
-              <option value="80">80kg</option>
-            </select>
-            <label for="destino">Localização:</label>
-            <select id="destino">
-              <option value="1">Porto Alegre</option>
-              <option value="2">São Paulo</option>
-              <option value="3">Recife</option>
-              <option value="4">Rio de Janeiro</option>
-              <option value="5">Salvador</option>
-            </select>
-            <p id="resultado" class="card-text"></p>
-            <button type="button" onclick="cadastrarEncomenda()" class="btn btn-primary">Cadastrar</button>
-            <button type="button" onclick="otimizarEntregas()" class="btn btn-danger">Otimizar</button>
-            <div id="alerta" class="alerta alert alert-primary" role="alert">
-              Cadastro realizado com sucesso!
-            </div>
-          </div>
+    <div class="page-container" data-bs-spy="scroll" data-bs-target="navBar" tabindex="0">
+        <div class="container-bkg">
+            <header class="">
+              <nav id="navBar" class="navbar" data-bs-theme="dark">
+                <div class="container">
+                  <a href="#" class="navbar-brand "><img src="assets/logo.svg" alt=""></a>
+                  <div class="d-flex navegacao">
+                    <a href="#" class="text-decoration-none link-header d-flex align-items-center gap-2"><img src="assets/home.svg" alt=""> Home</a>
+                    <a href="#sobre" class="text-decoration-none link-header">Sobre</a>
+                    <a href="#servico" class="text-decoration-none btn-outline-light link-header">Serviços</a>
+                    <a href="#contato" class="text-decoration-none link-header">Contato</a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas"
+                      data-bs-target="#offcanvas" aria-controls="offcanvas" aria-label="Toggle navigation">
+                      <span class="navbar-toggler-icon"></span>
+                    </button>
+                  </div>
+                </div>
+                <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvas"
+                  aria-labelledby="offcanvasLabel">
+                  <div class="offcanvas-header">
+                    <h5 class="offcanvas-title" id="offcanvasLabel">Menu TransFlash</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas"
+                      aria-label="Close"></button>
+                  </div>
+                  <div class="offcanvas-body">
+                    <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                      <li class="nav-item">
+                        <a href="#" class="nav-link active" aria-current="page">Home</a>
+                      </li>
+                      <li class="nav-item">
+                          <a href="#sobre" class="nav-link active" aria-current="page">Sobre</a>
+                      </li>
+                      <li class="nav-item">
+                          <a href="#servico" class="nav-link active" aria-current="page">Serviços</a>
+                      </li>
+                      <li class="nav-item">
+                          <a href="#contato" class="nav-link active" aria-current="page">Contato</a>
+                      </li>
+                    </ul>
+                  </div>
+              </nav>
+            </header>
+            
+            <section class="container container-home d-flex align-items-center gap-3">
+                <div class="container-home-info">
+                    <h1>TransFlash</h1>
+                    <h2>Serviços de Transporte</h2>
+                    <p>Transportamos suas encomendas para qualquer lugar do Brasil com segurança, pontualidade e preço justo.
+                    </p>
+                    <div class="d-flex flex-wrap gap-3 ">
+                      <a href="#servico" class="btn btn-servico d-flex align-items-center justify-content-center">Serviços</a>
+                      <a href="pages/cadastroEncomendas.html" class="btn btn-saiba-mais d-flex align-items-center justify-content-center">Cadastrar encomenda</a>
+                    </div>
+                </div>
+                <div class="container-home-maps">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3455.404760619397!2d-51.20334128488615!3d-29.996532081899804!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x951979e0c5d78685%3A0x48abb378377374b3!2sInstituto%20Caldeira!5e0!3m2!1spt-BR!2sbr!4v1690615344042!5m2!1spt-BR!2sbr" width="544" height="408" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </section>
         </div>
 
-        <!--
-        <h2>vamos usar esse iframe dpois</h2>
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/lVpQvuVdj5s" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-        -->
-      </main>
-  <footer></footer>
-  <script src="js/script.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+        <main>
+
+          <section id="sobre" class="sobre">
+            <div class="container container-sobre d-flex flex-column align-items-center gap-3">
+              <h2 class="display-6 fw-semibold">Conheça a TransFlash</h2>
+
+              <p class="text-center">A TransFlash está no mercado há mais de 40 anos, fazemos cerca de 10 mil viagens por ano. Contamos com frota nova e profissionais capacitados.</p>
+              
+              <iframe width="560" height="315" src="https://www.youtube.com/embed/lVpQvuVdj5s" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            </div>
+          </section>
+
+          <section id="servico" class="servico">
+              <div class="container container-servico d-flex align-items-center">
+                  <div class="container-servico-img">
+                      <img src="assets/image-2.png" alt="">
+                  </div>
+                  <div class="container-servico-infos gap-3">
+                      <div class="container-servico-info">
+                          <h2 style="font-size: 1.25rem;">TransFlash</h2>
+                          <h3>Nossos Serviços</h3>
+                          <p>A TransFlash atua no mercado de transporte há mais de 40 anos. Oferecemos pontualidade na entrega, preço justo e segurança para sua carga.</p>
+                      </div>
+                      <div class="container-servico-img2">
+                          <img src="assets/image-4.png" alt="">
+                      </div>
+                      <div class="container-srvico-card d-flex flex-column gap-5">
+                          <div class="card-servico d-flex gap-3 align-items-center">
+                              <img src="assets/image-5.png" alt="...">
+                              <div >
+                                <h5 >Cargas especiais</h5>
+                                <p >Recomendada para empresas que precisam transportar cargas pesadas e longas</p>
+                                <a href="pages/cadastroEncomendas.html" class="btn btn-card">+</a>
+                              </div>
+                            </div>
+                          <div class="card-servico d-flex gap-3 align-items-center">
+                              <img src="assets/image-6.png" alt="...">
+                              <div >
+                                <h5 >Carga expressa</h5>
+                                <p >Recomendada para empresas que precisam que o tempo de entrega de suas cargas seja reduzido</p>
+                                <a href="pages/cadastroEncomendas.html" class="btn btn-card">+</a>
+                              </div>
+                            </div>
+                          <div class="card-servico d-flex gap-3 align-items-center">
+                              <img src="assets/image-7.png" alt="...">
+                              <div >
+                                <h5 >Carga fracionada
+
+                                </h5>
+                                <p >Recomendada para empresas que desejam contratar apenas um espaço no veículo de transporte</p>
+                                <a href="pages/cadastroEncomendas.html" class="btn btn-card">+</a>
+                              </div>
+                            </div>
+                      </div>
+
+                  </div>
+              </div>
+          </section>
+          <section id="contato" class="contato d-flex align-items-center justify-content-center">
+            <div class="container-contato-form text-center">
+              <h2>Entre em contato</h2>
+              <form action="" class="mb-3 bg-white p-5 rounded-4 d-flex flex-column align-items-center gap-3">
+                  <input type="text" class="form-control" name="name" id="name" placeholder="Nome" required>
+                  <input id="email" class="form-control" name="email" placeholder="E-mail" required="" type="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" >
+                  <input  id="celular" class="form-control" name="celular" placeholder="Telefone (99) 99999-9999" required="" type="tel" maxlength="15" pattern="(\([0-9]{2}\))\s([9]{1})?([0-9]{5})-([0-9]{4})">
+                  <textarea name="texto" class="form-control" id="texto" cols="30" rows="10" placeholder="Mensagem"></textarea>
+                  <button class="btn fw-bold ">Enviar mensagem</button>
+                </form>
+            </div>
+
+            <div class="container-contato-card d-flex flex-column justify-content-center align-items-center gap-3">
+              <div class="card-contato rounded-3 d-flex gap-3 align-items-center">
+                <img src="assets/EnvelopeSimple.svg" alt="...">
+                <div>
+                  <h5 class="fw-light text-black fs-5">E-mail</h5>
+                  <p class="fw-bold text-black fs-5">email@gmail.com</p>
+                </div>
+              </div>
+              <div class="card-contato rounded-3 d-flex gap-3 align-items-center">
+                <img src="assets/WhatsappLogo.svg" alt="...">
+                <div >
+                  <h5 class="fw-light text-black fs-5">Whatsapp</h5>
+                  <p class="fw-bold text-black fs-5">(33) 3 3333-3333</p>
+                </div>
+              </div>
+              <div class="card-contato rounded-3 d-flex gap-3 align-items-center">
+                <img src="assets/Phone.svg" alt="...">
+                <div >
+                  <h5 class="fw-light text-black fs-5">Telefone</h5>
+                  <p class="fw-bold text-black fs-5">(33) 3 3333-3333</p>
+                </div>
+              </div>
+            </div>
+          </section>
+        </main>
+
+        <footer class="d-flex align-items-center justify-content-center">
+            <p class="m-0">© 2023 por <strong>TransFlash</strong>. Todos os direitos reservados.</p>
+        </footer>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
     crossorigin="anonymous"></script>
 </body>
-
 </html>
