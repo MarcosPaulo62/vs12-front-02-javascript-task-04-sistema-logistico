@@ -1,6 +1,7 @@
 .container-cadastro{
     width: 52.1875rem;
 }
+
 .cadastro{
     padding: 1.5rem 3.375rem 0 3.375rem;
     border-radius: 0 3.125rem 3.125rem 0;
@@ -53,12 +54,39 @@ form div{
     width: 45%;
 }
 
+@media (max-width: 1200px){
+    .info p{
+        height: 8rem;
+    }
 
+    .container-cadastro{
+        width: 40.1875rem;
+    }
+}
 
+@media(max-width: 780px){
+    .info p{
+        height: 6rem;
+    }
 
+    .container-cadastro{
+        width: 30.1875rem;
+    }
+}
 
+@media(max-width: 585px) {
+    h1{
+        font-size: 1.7rem;
+    }
+    
+    .info p{
+        height: 5rem;
+    }
 
-
+    .container-cadastro{
+        width: 20.1875rem;
+    }
+}
 
 
 

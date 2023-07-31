@@ -30,34 +30,39 @@ function cadastrarEncomenda() {
   let peso = parseFloat(document.getElementById('pesoMax').value);
   let destino = document.getElementById('destino').value;
 
-  let entrega = {};
+  if((!isNaN(peso)) && destino != ''){
+    let entrega = {};
 
-  switch (destino) {
-    case '1':
-      entrega = { cidade: 'Porto Alegre', distancia: 10 };
-      break;
-    case '2':
-      entrega = { cidade: 'São Paulo', distancia: 30 };
-      break;
-    case '3':
-      entrega = { cidade: 'Recife', distancia: 50 };
-      break;
-    case '4':
-      entrega = { cidade: 'Rio de Janeiro', distancia: 35 };
-      break;
-    case '5':
-      entrega = { cidade: 'Salvador', distancia: 100 };
-      break;
-  }
+    switch (destino) {
+      case '1':
+        entrega = { cidade: 'Porto Alegre', distancia: 10 };
+        break;
+      case '2':
+        entrega = { cidade: 'São Paulo', distancia: 30 };
+        break;
+      case '3':
+        entrega = { cidade: 'Recife', distancia: 50 };
+        break;
+      case '4':
+        entrega = { cidade: 'Rio de Janeiro', distancia: 35 };
+        break;
+      case '5':
+        entrega = { cidade: 'Salvador', distancia: 100 };
+        break;
+    }
 
-  encomendas.push({ id: encomendas.length, peso: peso, destino: entrega });
+    encomendas.push({ id: encomendas.length, peso: peso, destino: entrega });
 
-  mostrarAlerta();
+    mostrarAlerta('Cadastro realizado com sucesso!');
+  } else{
+    mostrarAlerta('Selecione um peso e um destino válidos!');
+  }  
 }
 
-function mostrarAlerta() {
+function mostrarAlerta(texto) {
     const alerta = document.getElementById('alerta');
     alerta.classList.add('show');
+    alerta.innerText = texto;
   
     setTimeout(() => {
       alerta.classList.remove('show');
