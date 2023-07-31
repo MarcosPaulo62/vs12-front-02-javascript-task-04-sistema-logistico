@@ -28,6 +28,11 @@ select {
     padding: .5rem 1.4375rem;
 }
 
+.aviso{
+    font-size: 0.9rem;
+    color: rgb(41, 70, 0);
+}
+
 form {
     margin-bottom: 1.875rem;
 }
@@ -40,9 +45,8 @@ form div {
     font-size: 1.125rem;
 }
 
-
 .info p {
-    height: 5rem;
+    height: 10rem;
     background-color: #C7C7C7;
     color: #737373;
     font-size: 1rem;

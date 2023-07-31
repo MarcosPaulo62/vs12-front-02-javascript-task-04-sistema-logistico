@@ -67,7 +67,7 @@
               <form class="d-flex justify-content-center gap-3">
                 <div >
                   <label for="nome">Nome destinatario:</label>
-                  <input type="text" placeholder="nome">
+                  <input type="text" placeholder="Nome" id="nomeDestino">
                   <label for="destino">Destino:</label>
                   <select id="destino">
                     <option value="" disabled selected>Selecione</option>
@@ -88,6 +88,7 @@
                     <option value="60">60kg</option>
                     <option value="80">80kg</option>
                   </select>
+                  <span id="aviso" class="aviso">*Peso mínimo para otimizar: 400Kg</span>
                 </div>
               </form>
               <div class="info">
@@ -95,8 +96,8 @@
                 <p id="resultado" class="card-text">Cadastre todas as encomendas antes de otimizar. As informções irão aparecer aqui após as otimizações!</p>
               </div>
               <div class="botao d-flex gap-3">
-                <button type="button" onclick="cadastrarEncomenda()" class="btn btn-cadastrar">Cadastrar</button>
-                <button type="button" onclick="otimizarEntregas()" class="btn btn-otimizar">Otimizar</button>
+                <button type="button" onclick="cadastrarEncomenda()" id="cadastrar" class="btn btn-cadastrar">Cadastrar</button>
+                <button type="button" onclick="otimizarEntregas()" disabled id="otimizar" class="btn btn-otimizar">Otimizar</button>
                 <div id="alerta" class="alerta alert alert-primary" role="alert">
                   Cadastro realizado com sucesso!
                 </div>
