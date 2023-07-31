@@ -56,6 +56,23 @@ form div {
 
 .btn {
     width: 45%;
+    color: var(--font-color);
+}
+
+.btn-cadastrar{
+    background-color: var(--primary-color);
+}
+
+.btn-cadastrar:hover{
+    background-color:#0a0064;
+}
+
+.btn-otimizar{
+    background-color: var(--secondary-color);
+}
+
+.btn-otimizar:hover{
+    background-color: #73b192;
 }
 
 footer {
