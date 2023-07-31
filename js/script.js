@@ -161,7 +161,7 @@ function otimizarEntregas() {
   saida += `Custo total da frota: ${custoTotalFrota.toLocaleString('pt-br', { style: 'currency', currency: 'BRL' })}\n\n`;
 
   function incluirSaida(item){
-    saida += item.id + ', ';
+    saida += item.id + ',';
   }
 
   if (encomendas.length > 0) {
